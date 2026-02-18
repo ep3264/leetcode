@@ -1,6 +1,7 @@
 #include <string>
 #include <unordered_set>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 class Solution
@@ -11,8 +12,8 @@ public:
         if (s.size() != t.size())
             return false;
 
-        insertionSort(s);
-        insertionSort(t);
+        std::sort(s.begin(), s.end());
+        std::sort(t.begin(), t.end());
 
         return s == t;
     }
