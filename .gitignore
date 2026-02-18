@@ -1,0 +1,78 @@
+# =========================
+# Build directories
+# =========================
+build/
+Build/
+bin/
+Bin/
+out/
+Out/
+Debug/
+Release/
+x64/
+x86/
+
+# =========================
+# CMake
+# =========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+CTestTestfile.cmake
+
+# =========================
+# Make
+# =========================
+*.d
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+*.out
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.vcxproj*
+*.sln
+*.user
+*.filters
+*.pdb
+*.ilk
+*.idb
+
+# =========================
+# CLion / JetBrains
+# =========================
+.idea/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# MacOS
+# =========================
+.DS_Store
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Coverage / Testing
+# =========================
+*.gcda
+*.gcno
+*.gcov
+coverage/
