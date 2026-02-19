@@ -2,6 +2,7 @@
 #include <unordered_set>
 #include <iostream>
 #include <algorithm>
+#include <inc.h>
 using namespace std;
 
 class Solution
@@ -22,20 +23,21 @@ public:
     {
         for (size_t i = 1; i < s.size(); ++i)
         {
+            auto saved = s[i];
             int j = i - 1;
-            while (j >= 0 && s[j] > s[j + 1])
+            while (j >= 0 && s[j] > saved)
             {
-                auto temp = s[j];
-                s[j] = s[j + 1];
-                s[j + 1] = temp;
+                s[j + 1] = s[j];
                 j--;
             }
+            s[j + 1] = saved;
         }
     }
 };
 
 int main()
 {
+    print_test_msg();
     Solution s;
     string a = "hello";
     string b = "llohe";
