@@ -18,10 +18,7 @@ public:
                 return {m[key], i};
             }
 
-            if (m.find(nums[i]) == m.end())
-            {
-                m[nums[i]] = i;
-            }
+            m.insert({nums[i], i}); //  if the key exists, it does nothing
         }
         return result;
     }
