@@ -16,7 +16,7 @@ class Solution {
     reverseList(head) {
         let prev = null;
         let cur = head
-        let next = head.next;
+        let next = head?.next;
 
         while (cur) {
             cur.next = prev;
