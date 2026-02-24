@@ -17,3 +17,7 @@ l(typeof null);
 
 let n = 123456.789;
 l(n.toPrecision(9));
+
+let s = "atest";
+
+l(s.charCodeAt(0));

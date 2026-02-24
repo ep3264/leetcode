@@ -27,18 +27,12 @@ class ObjClass {
         this.b = b;
     }
 
-
-    /**
-     * 
-     */
-    test() {
-
-    }
-
+    test() { }
 }
 const obj5 = new ObjClass(1, 2);
 console.log(Object.getPrototypeOf(obj5));
-console.log(obj5.toString());
+
+// Child
 class Child extends ObjClass {
     constructor(a, b) {
         super(a, b);
