@@ -1,3 +1,14 @@
+
+function printPrototypeChain(obj) {
+    let current = obj;
+
+    while (current !== null) {
+        console.log(current);
+        current = Object.getPrototypeOf(current);
+    }
+
+    console.log("null");
+}
 // 1. Object Literal
 const obj1 = { a: 1, b: 2 };
 console.log(Object.getPrototypeOf(obj1));
@@ -12,13 +23,17 @@ function Obj(a, b) {
     this.a = a;
     this.b = b;
 }
+Obj.prototype.testM = function () {
+    console.log("Test");
+};
 const obj3 = new Obj(1, 2);
 console.log(Object.getPrototypeOf(obj3));
 
 // 4. Object.create()
 const proto = { a: 1 };
-const obj4 = Object.create(proto);
-console.log(Object.getPrototypeOf(obj4));
+const obj4 = Object.create(Obj.prototype);
+printPrototypeChain(obj4);
+//console.log(Object.getPrototypeOf(obj4));
 
 // 5. Class Syntax
 class ObjClass {
