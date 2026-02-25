@@ -4,15 +4,12 @@ class Solution {
      * @return {number}
      */
     hammingWeight(n) {
-        let cur = n;
-        let count = 0;
-        while (cur) {
-            if (cur & 1) {
-                count++;
-            }
-            cur = cur >>> 1;
+        let res = 0;
+        while (n !== 0) {
+            n &= n - 1;
+            res++;
         }
-        return count;
+        return res;
     }
 
 }
