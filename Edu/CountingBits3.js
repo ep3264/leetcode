@@ -1,0 +1,17 @@
+class Solution {
+    /**
+     * @param {number} n
+     * @return {number[]}
+     */
+    countBits(n) {
+        let dp = new Array(n + 1).fill(0);
+        for (let i = 1; i <= n; i++) {
+            dp[i] = dp[i >> 1] + (i & 1);
+        }
+        return dp;
+    }
+}
+
+const n = 16;
+const sol = new Solution;
+console.log(sol.countBits(n));

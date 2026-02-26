@@ -26,6 +26,6 @@ class Solution {
     }
 }
 
-const n = 4;
+const n = 16;
 const sol = new Solution;
 console.log(sol.countBits(n));
