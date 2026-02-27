@@ -34,3 +34,7 @@ console.log(text2.match(/cat(?=(?:[^"]*"[^"]*")*[^"]*$)/g));
 
 const text3 = `abc`;
 console.log(text3.match(/(?=.*[c])abc/));
+
+let s4 = "15 times 15 is 225";
+const r4 = s4.replace(/\d+/gu, n => parseInt(n).toString(16))  // => "f times f is e1"
+log(r4);
