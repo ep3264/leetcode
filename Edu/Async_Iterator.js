@@ -10,6 +10,6 @@ async function* createAsyncIterator(array) {
 (async () => {
     const asyncIterator = createAsyncIterator([5, 2, 3, 1]);
     for await (const value of asyncIterator) {
-        console.log(value); // Logs 1, then 2, then 3 with a delay
+        console.log(value); // Logs 5 2 3 1 preserve order even if there are tasks that can be completed
     }
 })(); 

@@ -57,11 +57,11 @@ class AsyncQueue {
 const queue = new AsyncQueue();
 
 // Producer: asynchronously enqueues values
-setTimeout(() => queue.enqueue(1), 100);
-setTimeout(() => queue.enqueue(2), 600);
-setTimeout(() => queue.enqueue(3), 300);
-setTimeout(() => queue.enqueue(4), 200);
-setTimeout(() => queue.close(), 700); // Close the queue after adding values
+setTimeout(() => queue.enqueue(1), 200);
+setTimeout(() => queue.enqueue(2), 1500);
+setTimeout(() => queue.enqueue(3), 1000);
+setTimeout(() => queue.enqueue(4), 500);
+setTimeout(() => queue.close(), 2000); // Close the queue after adding values
 
 // Consumer: using for-await to consume the queue
 (async () => {
