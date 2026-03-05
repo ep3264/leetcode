@@ -50,15 +50,13 @@ class Solution {
      * @return {boolean}
      */
     isSubtree(root, subRoot) {
-        if (!root && !subRoot) return true;
+        if (!subRoot) return true;
 
-        if (!root || !subRoot) return false;
+        if (!root) return false;
 
-        let ret = this.isSubtree(root.left, subRoot) || this.isSubtree(root.right, subRoot);
-        ret = ret || this.isSameTree(root, subRoot);
-
-
-        return ret;
+        return this.isSameTree(root, subRoot)
+            || this.isSubtree(root.left, subRoot)
+            || this.isSubtree(root.right, subRoot);
     }
 
     isSameTree(root, subRoot) {
@@ -66,7 +64,7 @@ class Solution {
 
         if (!root || !subRoot) return false;
 
-        if (root.val == subRoot.val) {
+        if (root.val === subRoot.val) {
             const left = this.isSameTree(root.left, subRoot.left);
             const right = this.isSameTree(root.right, subRoot.right);
 
