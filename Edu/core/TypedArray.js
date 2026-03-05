@@ -1,4 +1,4 @@
-import { log } from "./include.js";
+import { log } from "../include.js";
 
 let bytes = new Uint8Array(1024);        // A 1K buffer 
 let pattern = new Uint8Array([0, 1, 2, 3]); // An array of 4 bytes 

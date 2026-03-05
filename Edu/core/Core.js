@@ -1,4 +1,4 @@
-import { log } from './include.js'
+import { log } from '../include.js'
 
 console.log("hello!");
 
@@ -117,6 +117,5 @@ switch (sw) {
     default: log("default for " + sw);
 }
 
-log(-1 / 0);
-log(0 / 0);
-
+log(-1 / 0); // -Infinity
+log(0 / 0); // NaN
