@@ -19,7 +19,7 @@ const root = new TreeNode(
         new TreeNode(7)
     )
 );
-const subRoot = new TreeNode(
+const root2 = new TreeNode(
     2,
     new TreeNode(
         4
@@ -50,7 +50,30 @@ class Solution {
      * @return {boolean}
      */
     isSubtree(root, subRoot) {
+        if (!root && !subRoot) return true;
 
+        if (!root || !subRoot) return false;
+
+        let ret = this.isSubtree(root.left, subRoot) || this.isSubtree(root.right, subRoot);
+        ret = ret || this.isSameTree(root, subRoot);
+
+
+        return ret;
+    }
+
+    isSameTree(root, subRoot) {
+        if (!root && !subRoot) return true;
+
+        if (!root || !subRoot) return false;
+
+        if (root.val == subRoot.val) {
+            const left = this.isSameTree(root.left, subRoot.left);
+            const right = this.isSameTree(root.right, subRoot.right);
+
+            return left && right;
+        }
+
+        return false;
     }
 }
 
@@ -59,4 +82,4 @@ const sol = new Solution;
 
 printLevelOrder(root);
 printLevelOrder(root2);
-console.log(sol.isSameTree(root, root2));
+console.log(sol.isSubtree(root, root2));
