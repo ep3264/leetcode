@@ -18,7 +18,6 @@ class Solution {
             const ret = n * factorial(n - 1);
             cache.set(n, ret);
             return ret;
-
         }
 
         let cur = n;
