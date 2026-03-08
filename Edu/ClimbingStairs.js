@@ -36,5 +36,4 @@ class Solution {
 
 
 const s = new Solution;
-
 console.log(s.climbStairs(6));
