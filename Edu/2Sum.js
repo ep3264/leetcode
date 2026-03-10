@@ -15,6 +15,7 @@ class Solution {
             if (!map.has(nums[i]))
                 map.set(nums[i], i);
         }
+
         return [];
     }
 

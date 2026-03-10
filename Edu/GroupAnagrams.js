@@ -4,9 +4,10 @@ class Solution {
      * @return {string[][]}
      */
     groupAnagrams(strs) {
+        if (!strs || !strs.length) return [];
+        if (strs.length === 1) return [strs];
 
         // Hash map <sorted string, [indicies]> 
-        if (strs.length === 1) return [strs];
         const map = new Map();
 
         for (let i = 0; i < strs.length; i++) {
