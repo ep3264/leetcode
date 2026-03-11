@@ -8,43 +8,30 @@ class Solution {
         // then use two pointer to find 3 suitable elements
 
         nums.sort((a, b) => a - b);
-        const set = new Set();
 
         const ret = [];
         for (let i = 0; i < nums.length - 2; i++) {
-            let left = i, right = nums.length - 1;
-            while (left != right) {
-                const diff = nums[left] + nums[right];
-                if (diff < 0) {
-                    let thridIndex = right - 1;
-                    const prevLength = ret.length;
-                    while (thridIndex > left) {
-                        const p = [nums[left], nums[thridIndex], nums[right]];
-                        if (diff + nums[thridIndex] === 0 && !set.has(p.join(''))) {
-                            set.add(p.join(''));
-                            ret.push(p);
+            if (i > 0 && nums[i] === nums[i - 1]) continue; // skip duplicates
+
+            let left = i + 1, right = nums.length - 1;
+            while (left < right) {
 
 
-                            break;
-                        }
-                        thridIndex--;
-                    }
-                } else {
-                    const prevLength = ret.length;
-                    let thridIndex = left + 1;
-                    while (thridIndex < right) {
-                        const p = [nums[left], nums[thridIndex], nums[right]];
-                        if (diff + nums[thridIndex] === 0 && !set.has(p.join(''))) {
-                            ret.push(p);
-                            set.add(p.join(''));
+                const sum = nums[i] + nums[left] + nums[right];
 
-                            break;
-                        }
-                        thridIndex++
-                    }
-
+                if (sum === 0) {
+                    const p = [nums[i], nums[left], nums[right]];
+                    ret.push(p);
+                    // skip duplicates
+                    while (left < right && nums[left] === nums[left + 1]) left++;
+                    while (left < right && nums[right] === nums[right - 1]) right--;
+                    left++;
+                    right--;
                 }
-                right--;
+
+                else if (sum < 0) left++;
+                else right--;
+
             }
         }
 
@@ -53,6 +40,14 @@ class Solution {
     }
 }
 
+console.log(new Solution().threeSum([0, 0, 0, 0])); // [ [0, 0, 0] ] 
+console.log(new Solution().threeSum([-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6]));
+/*
 
-
-console.log(new Solution().threeSum([0, 0, 0, 0]));
+  [ -4, -2, 6 ],
+  [ -4, 0, 4 ],
+  [ -4, 1, 3 ],
+  [ -4, 2, 2 ],
+  [ -2, -2, 4 ],
+  [ -2, 0, 2 ]
+*/
