@@ -11,6 +11,7 @@ class Solution {
 
         const ret = [];
         for (let i = 0; i < nums.length - 2; i++) {
+            if (nums[i] > 0) break;
             if (i > 0 && nums[i] === nums[i - 1]) continue; // skip duplicates
 
             let left = i + 1, right = nums.length - 1;
@@ -25,6 +26,7 @@ class Solution {
                     // skip duplicates
                     while (left < right && nums[left] === nums[left + 1]) left++;
                     while (left < right && nums[right] === nums[right - 1]) right--;
+                    // [a + b + c]  are == 0 and unique only if b c different => inc both 
                     left++;
                     right--;
                 }
