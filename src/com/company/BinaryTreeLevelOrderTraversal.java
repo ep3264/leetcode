@@ -9,23 +9,23 @@ import java.util.Queue;
 public class BinaryTreeLevelOrderTraversal {
 
     public static void main(String[] args) {
-        List<List<Integer>> ret = new Solution().levelOrder(TreeNode.ROOT);
+        var ret = new Solution().levelOrder(TreeNode.ROOT);
         System.out.println(ret);
     }
 }
 
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new LinkedList<List<Integer>>();
+        var result = new LinkedList<List<Integer>>();
         if (root == null)
             return result;
 
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-
             int n = queue.size();
-            List<Integer> level = new ArrayList<Integer>();
+
+            List<Integer> level = new ArrayList<>();
             result.add(level);
             for (int i = 0; i < n; i++) {
                 TreeNode node = queue.poll();
