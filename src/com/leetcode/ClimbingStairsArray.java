@@ -1,4 +1,4 @@
-package com.company;
+package com.leetcode;
 
 public class ClimbingStairsArray {
 

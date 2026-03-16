@@ -1,4 +1,4 @@
-package com.company;
+package com.leetcode;
 
 public class BestTimeToBuyAndSellStock {
     public static void main(String[] args) {

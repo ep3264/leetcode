@@ -1,4 +1,4 @@
-package com.company;
+package com.leetcode;
 
 
 import java.util.ArrayList;
@@ -9,12 +9,10 @@ import java.util.Queue;
 public class BinaryTreeLevelOrderTraversal {
 
     public static void main(String[] args) {
-        var ret = new Solution().levelOrder(TreeNode.ROOT);
+        var ret = new BinaryTreeLevelOrderTraversal().levelOrder(TreeNode.ROOT);
         System.out.println(ret);
     }
-}
 
-class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         var result = new LinkedList<List<Integer>>();
         if (root == null)

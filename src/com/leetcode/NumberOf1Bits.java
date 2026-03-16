@@ -1,8 +1,4 @@
-package com.company;
-
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.TreeSet;
+package com.leetcode;
 
 public class NumberOf1Bits {
     public int hammingWeight(int n) {
