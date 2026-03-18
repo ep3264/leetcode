@@ -25,7 +25,8 @@ public class ListNode {
         }
     }
 
-    public static final ListNode HEAD = new ListNode(0,
+    public static final ListNode HEAD = new ListNode(
+            0,
             new ListNode(1,
                     new ListNode(2,
                             new ListNode(3))));
