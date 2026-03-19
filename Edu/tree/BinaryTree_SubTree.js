@@ -1,10 +1,4 @@
-class TreeNode {
-    constructor(val = 0, left = null, right = null) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+import { TreeNode, printLevelOrder } from "./TreeNode.js";
 
 const root = new TreeNode(
     1,
@@ -19,6 +13,7 @@ const root = new TreeNode(
         new TreeNode(7)
     )
 );
+
 const root2 = new TreeNode(
     2,
     new TreeNode(
@@ -28,20 +23,6 @@ const root2 = new TreeNode(
         5
     )
 );
-
-function printLevelOrder(root) {
-    if (!root) return;
-
-    const queue = [root];
-
-    while (queue.length > 0) {
-        const node = queue.shift();
-        console.log(node.val);
-
-        if (node.left) queue.push(node.left);
-        if (node.right) queue.push(node.right);
-    }
-}
 
 class Solution {
     /**
@@ -75,9 +56,6 @@ class Solution {
     }
 }
 
-
-const sol = new Solution;
-
 printLevelOrder(root);
 printLevelOrder(root2);
-console.log(sol.isSubtree(root, root2));
+console.log(new Solution().isSubtree(root, root2));
