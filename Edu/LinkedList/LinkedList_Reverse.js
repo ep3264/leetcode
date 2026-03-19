@@ -1,12 +1,4 @@
-/**
- * Definition for singly-linked list.
- */
-class ListNode {
-    constructor(val = 0, next = null) {
-        this.val = val;
-        this.next = next;
-    }
-}
+import { ListNode, createList } from "./ListNode.js";
 
 class Solution {
     /**
@@ -36,22 +28,9 @@ class Solution {
 }
 
 // Build list: 0 -> 1 -> 2 -> 3 -> null
-const head = new ListNode(
-    0,
-    new ListNode(
-        1,
-        new ListNode(
-            2,
-            new ListNode(3)
-        )
-    )
-);
+const head = createList([0, 1, 2, 3]);
 
-const sol = new Solution;
-
-const reversed = sol.reverseList(head);
-
-let cur = reversed;
+let cur = new Solution().reverseList(head);
 
 while (cur !== null) {
     console.log(cur.val);

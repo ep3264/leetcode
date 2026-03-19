@@ -1,5 +1,4 @@
-import { TreeNode } from "./TreeNode.js";
-
+import { TreeNode, printLevelOrder } from "./TreeNode.js";
 
 const root = new TreeNode(
     1,
@@ -14,7 +13,6 @@ const root = new TreeNode(
         new TreeNode(7)
     )
 );
-
 
 class Solution {
     /**
@@ -37,10 +35,9 @@ class Solution {
 
         return root;
     }
-
 }
 
-const sol = new Solution;
-
-printLevelOrder(sol.invertTree(root));
+printLevelOrder(
+    new Solution().invertTree(root)
+);
 

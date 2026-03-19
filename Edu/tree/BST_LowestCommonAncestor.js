@@ -17,7 +17,6 @@ const root = new TreeNode(
     )
 );
 
-
 const root2 = new TreeNode(
     3,
     new TreeNode(1,
@@ -27,7 +26,6 @@ const root2 = new TreeNode(
     ),
     new TreeNode(4)
 );
-
 
 class Solution {
     /**
@@ -49,7 +47,6 @@ class Solution {
         return root;
     }
 }
-
 
 console.log(new Solution().lowestCommonAncestor(root, new TreeNode(2), new TreeNode(4)).val); // 2
 console.log(new Solution().lowestCommonAncestor(root2, new TreeNode(2), new TreeNode(4))); // 3

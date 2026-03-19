@@ -47,5 +47,4 @@ class Solution {
     }
 }
 
-
 console.log(new Solution().levelOrder(root));

@@ -1,14 +1,4 @@
-
-/**
- * Definition for singly-linked list.
- */
-class ListNode {
-    constructor(val = 0, next = null) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
+import { ListNode } from "./ListNode.js";
 
 class Solution {
     /**
@@ -16,7 +6,6 @@ class Solution {
      * @return {boolean}
      */
     hasCycle(head) {
-
         const map = new Map();
         let cur = head;
         let index = 0;
@@ -32,9 +21,7 @@ class Solution {
         }
 
         return -1;
-
     }
-
 }
 
 const tail = new ListNode(3);
@@ -50,6 +37,6 @@ const head = new ListNode(
 );
 tail.next = head;
 
-const s = new Solution;
-
-console.log(s.hasCycle(head));
+console.log(
+    new Solution().hasCycle(head)
+);

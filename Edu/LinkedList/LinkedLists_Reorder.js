@@ -1,9 +1,4 @@
-class ListNode {
-    constructor(val = 0, next = null) {
-        this.val = val;
-        this.next = next;
-    }
-}
+import { ListNode, createList } from "./ListNode.js";
 
 class Solution {
     /**
@@ -38,9 +33,7 @@ class Solution {
 
 const head = createList([0, 1, 2, 3, 4, 5, 6]);
 
-
-const solution = new Solution();
-solution.reorderList(head);
+new Solution().reorderList(head);
 
 let cur = head;
 while (cur) {
@@ -48,16 +41,3 @@ while (cur) {
     cur = cur.next;
 }
 
-
-
-function createList(arr) {
-    let dummy = new ListNode();
-    let current = dummy;
-
-    for (let value of arr) {
-        current.next = new ListNode(value);
-        current = current.next;
-    }
-
-    return dummy.next;
-}
