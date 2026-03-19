@@ -15,15 +15,13 @@ class Solution {
      * @return {boolean}
      */
     isValidBST(root) {
-        const newRoot = this.buildTree(root);
-
-        return this.isSameTree(root, newRoot);
+        return this.isSameTree(root, this.buildTree(root));
     }
 
     buildTree(root) {
         if (!root) return null;
         const newRoot = new TreeNode(root.val);
-        this.addNodes(root.left, newRoot);  // skip root itself, it's already added
+        this.addNodes(root.left, newRoot);
         this.addNodes(root.right, newRoot);
         return newRoot;
     }
@@ -37,18 +35,16 @@ class Solution {
 
     addNode(dst, val) {
         if (val < dst.val) {
-            if (!dst.left) dst.left = new TreeNode(val);  // found the spot
-            else this.addNode(dst.left, val);     // keep searching
-        } else {
+            if (!dst.left) dst.left = new TreeNode(val);
+            else this.addNode(dst.left, val);
+        } else if (val > dst.val) {
             if (!dst.right) dst.right = new TreeNode(val);
             else this.addNode(dst.right, val);
         }
     }
 
-
     isSameTree(a, b) {
         if (!a && !b) return true;
-
         if (!a || !b) return false;
 
         if (a.val !== b.val) return false;
