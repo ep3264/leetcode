@@ -1,4 +1,4 @@
-import { log } from '../include.js'
+import { log } from './include.js'
 
 const products = [
   { name: "Laptop", price: 1200, category: "Electronics" },

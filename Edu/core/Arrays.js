@@ -1,4 +1,4 @@
-import { log } from "../include.js";
+import { log } from "./include.js";
 // Example arrays with nested arrays
 let array1 = [[1, 2], [3, 4]];
 let array2 = [[5, 6], [7, 8]];

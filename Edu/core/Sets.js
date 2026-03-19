@@ -1,6 +1,6 @@
 import {
     log
-} from "../include.js"
+} from "./include.js"
 
 let s = new Set();
 

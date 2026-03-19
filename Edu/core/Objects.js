@@ -1,4 +1,4 @@
-import { log } from '../include.js'
+import { log } from './include.js'
 
 let a = new Array();
 a.push(1, 3, 5, 7, 9);

@@ -1,4 +1,4 @@
-import { log } from '../include.js'
+import { log } from './include.js'
 
 console.log("hello!");
 

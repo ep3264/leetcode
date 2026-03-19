@@ -20,3 +20,30 @@ export function printLevelOrder(root) {
         if (node.right) queue.push(node.right);
     }
 }
+
+
+export function treeToArray(root) {
+    if (!root) return [];
+
+    const result = [];
+    const queue = [root];
+
+    while (queue.length > 0) {
+        const node = queue.shift();
+
+        if (node) {
+            result.push(node.val);
+            queue.push(node.left);
+            queue.push(node.right);
+        } else {
+            result.push(null);
+        }
+    }
+
+    // Trim trailing nulls
+    while (result[result.length - 1] === null) {
+        result.pop();
+    }
+
+    return result;
+}

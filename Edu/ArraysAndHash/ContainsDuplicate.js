@@ -4,19 +4,22 @@ class Solution {
      * @return {boolean}
      */
     hasDuplicate(nums) {
-        const set = new Set();
+        const seen = new Set();
         for (const n of nums) {
-            if (set.has(n)) {
+            if (seen.has(n)) {
                 return true;
             }
-            set.add(n);
+            seen.add(n);
         }
-        return false;
 
+        return false;
     }
+
 }
+
 const nums = [1, 2, 3, 3];
 
-const sol = new Solution();
-console.log(sol.hasDuplicate(nums));
+console.log(
+    new Solution().hasDuplicate(nums)
+);
 

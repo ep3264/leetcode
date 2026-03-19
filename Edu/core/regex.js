@@ -1,4 +1,4 @@
-import { log } from '../include.js'
+import { log } from './include.js'
 
 let p = /(?<name1>a+?)(?<name2>b)/;
 let s = "aaab";

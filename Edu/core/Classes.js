@@ -1,4 +1,4 @@
-import { log } from "../include.js";
+import { log } from "./include.js";
 
 function Animal(name, type) {
   this.name = name;
