@@ -25,17 +25,14 @@ class Solution {
      * @return {boolean}
      */
     isValidBST(root) {
-        if (!root) true;
-
-        return this.isValidBSTRec(root.left, -Number.MAX_VALUE, root.val)
-            && this.isValidBSTRec(root.right, root.val, Number.MAX_VALUE);
+        return this.isValidBST_DFS(root, -Infinity, Infinity);
     }
 
-    isValidBSTRec(root, min, max) {
+    isValidBST_DFS(root, min, max) {
         if (!root) return true;
 
-        return root.val > min && root.val < max && this.isValidBSTRec(root.left, min, root.val)
-            && this.isValidBSTRec(root.right, root.val, max);
+        return root.val > min && root.val < max && this.isValidBST_DFS(root.left, min, root.val)
+            && this.isValidBST_DFS(root.right, root.val, max);
     }
 }
 

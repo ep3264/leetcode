@@ -1,4 +1,4 @@
-export class Dogg {
+export class Dog {
   hello(): void {
     console.log("Hello");
   }

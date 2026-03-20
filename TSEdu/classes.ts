@@ -3,13 +3,19 @@ class Base {
   constructor() {
     console.log("My name is " + this.name);
   }
+
+  /**
+   * method
+   */
+  public method() {
+    console.log("Name is = " + this.name);
+  }
 }
 
 class Derived extends Base {
   name = "derived";
 }
 
-// Prints "base", not "derived"
-const d = new Derived();
-
+const d = new Derived(); // My name is base
+d.method(); // Name is = derived
 console.log(d.name);

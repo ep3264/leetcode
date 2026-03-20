@@ -1,4 +1,4 @@
-import { Dogg } from "./Dogg";
+import { Dog } from "./Dog";
 
 class Base {
   protected x: number = 1;
@@ -27,8 +27,8 @@ const b: Base = new Derived2();
 (b as Derived2).f1(b as Derived2);
 console.log(b.getX());
 
-const dogg: Dogg = new Dogg();
-dogg.hello();
+const dog: Dog = new Dog();
+dog.hello();
 
 class IncludeTest {
   printMsg() {

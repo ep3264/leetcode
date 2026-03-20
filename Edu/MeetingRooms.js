@@ -13,45 +13,13 @@ class Solution {
      * @returns {boolean}
      */
     canAttendMeetings(intervals) {
-        if (!intervals.length) return true;
-        if (this.merge(intervals, 0, intervals.length - 1)[0] === -1)
-            return false;
-
-        return true;
-    }
-
-    /**
-     * @param {Interval[]} intervals
-     * @returns {Interval[]}
-     */
-    merge(intervals, start, end) {
-        if (start == end) return [intervals[start]];
-
-        let mid = Math.floor((start + end) / 2);
-        let left = this.merge(intervals, start, mid);
-        let right = this.merge(intervals, mid + 1, end);
-
-        if (left[0] === -1) return [-1];
-        if (right[0] === -1) return [-1];
-
-        const result = [];
-        let i = 0, j = 0;
-
-        while (i < left.length && j < right.length) {
-            if (left[i].start < right[j].start) {
-                if (left[i].end > right[j].start) return [-1];
-                result.push(left[i++]);
-            }
-            else {
-                if (right[j].end > left[i].start) return [-1];
-                result.push(right[j++])
+        intervals.sort((a, b) => a.start - b.start);
+        for (let i = 1; i < intervals.length; i++) {
+            if (intervals[i].start < intervals[i - 1].end) {
+                return false;
             }
         }
-
-        while (i < left.length) result.push(left[i++]);
-        while (j < right.length) result.push(right[j++]);
-
-        return result;
+        return true;
     }
 }
 
