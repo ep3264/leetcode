@@ -11,6 +11,7 @@ class Solution {
         const map = new Map();
 
         for (let i = 0; i < strs.length; i++) {
+            // O(nlogn)
             const str = strs[i].split('').sort().join('');
             if (map.has(str)) {
                 const arr = map.get(str);
@@ -25,4 +26,7 @@ class Solution {
 }
 
 const strs = ["act", "pots", "tops", "cat", "stop", "hat"];
-console.log(new Solution().groupAnagrams(strs));
+
+console.log(
+    new Solution().groupAnagrams(strs)
+);

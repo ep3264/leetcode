@@ -5,7 +5,12 @@ class Interval {
     }
 }
 
-
+/*
+ O(n log n) / O(n log n)
+A simpler O(n log n) time / O(log n) space alternative would be 
+to sort the array in-place first, then do a single linear scan to check for overlaps
+ — avoiding the recursive array allocation entirely.
+*/
 class Solution {
     /**
      * @param {Interval[]} intervals
@@ -54,7 +59,6 @@ class Solution {
     }
 }
 
-// O(nlogn)
 console.log(
     new Solution().canAttendMeetings([new Interval(0, 30), new Interval(35, 40), new Interval(40, 41)])
 );
