@@ -23,7 +23,6 @@ class Solution {
             max = Math.max(max, cache[i]);
         }
 
-
         return max;
     }
 }
