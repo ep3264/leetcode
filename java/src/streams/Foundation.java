@@ -22,12 +22,13 @@ public class Foundation {
         List names = List.of("Alice", "Bob", "Carol");
         names.stream().forEach(System.out::print);
         System.out.println();
+
         // Sort a list of integers
         List<Integer> nums2 = List.of(5, 1, 4, 2, 3);
         System.out.println(
                 nums2.stream()
-                        .sorted().collect(Collectors.toList()))
-        ;
+                        .sorted().collect(Collectors.toList())
+        );
 
         // Names of adults only
         record Person(String name, int age) {}
@@ -53,6 +54,7 @@ public class Foundation {
         System.out.println(
                 nums4.stream().distinct().sorted().collect(Collectors.toList())
         );
+
         //  Flatten a list of lists
         var groups = List.of(
                 List.of("a","b"), List.of("c"), List.of("d","e","f")
@@ -62,17 +64,18 @@ public class Foundation {
                         .flatMap(l -> l.stream()) // or  .flatMap(Collection::stream)
                         .collect(Collectors.toList())
         );
+
         // Join strings with a separator
         var tags = List.of("java", "streams", "functional");
         System.out.println(
                 tags.stream().collect(Collectors.joining(" | "))
         );
+
         // Check if all scores are above 60, and if any score is above 90.
         var scores = List.of(72, 88, 91, 65, 79);
         System.out.println(
                 scores.stream().allMatch(s -> s > 60) + " " +
                         scores.stream().anyMatch(s -> s > 90)
-
         );
 
         // Group words by first letter

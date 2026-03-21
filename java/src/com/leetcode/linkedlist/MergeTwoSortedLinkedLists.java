@@ -1,7 +1,6 @@
-package com.leetcode;
+package com.leetcode.linkedlist;
 
 public class MergeTwoSortedLinkedLists {
-
 
     public static void main(String[] args) {
         ListNode.printList(
@@ -26,11 +25,7 @@ public class MergeTwoSortedLinkedLists {
             list1.next = ret;
             return list1;
         }
-
     }
-
-
-
 
     public static final ListNode HEAD = new ListNode(
             0,

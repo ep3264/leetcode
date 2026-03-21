@@ -28,7 +28,6 @@ public class Expert {
                                 )
                         )
                 )
-
         );
 
         // Build a Map counting occurrences using toMap(), providing a merge function for duplicate keys.

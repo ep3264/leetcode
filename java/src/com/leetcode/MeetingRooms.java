@@ -3,14 +3,7 @@ package com.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-class Interval {
-    public int start, end;
 
-    public Interval(int start, int end) {
-        this.start = start;
-        this.end = end;
-    }
-}
 
 public class MeetingRooms {
 
@@ -33,6 +26,15 @@ public class MeetingRooms {
         }
 
         return true;
+    }
+
+    private static class Interval {
+        public int start, end;
+
+        public Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
     }
 }
 

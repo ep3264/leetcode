@@ -44,9 +44,9 @@ public class Advanced {
                       Collectors.counting()
                 ))
         );
+
         //  Collect all leading even numbers, stopping at the first odd one.
         //  Then separately collect everything after (and including) the first odd one.
-
         var nums = List.of(2, 4, 6, 7, 8, 10, 12);
 
         System.out.println(
@@ -57,7 +57,6 @@ public class Advanced {
         );
 
         // Generate Fibonacci numbers
-
         System.out.println(
                 Stream.iterate(new int[] {0, 1}, n -> new int[]{n[1], n[0] + n[1]})
                         .map(n -> n[0])
@@ -81,16 +80,13 @@ public class Advanced {
         );
 
         // Generate a multiplication table
-
         System.out.println(
                 IntStream.rangeClosed(1, 3)
                         .boxed()
                         .flatMap(
                         i -> IntStream.rangeClosed(1, 3).mapToObj(i2 -> i +"x" + i2 + "=" + (i * i2))
                 ).collect(Collectors.toList())
-
         );
-
 
     }
 }

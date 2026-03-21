@@ -16,11 +16,11 @@ public class ValidAnagram {
 
         return  true;
     }
+
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) return  false;
 
         var count = new int[26];
-
 
         for (var i = 0; i < s.length(); i++) {
             count[s.charAt(i) - 'a']++;
@@ -28,7 +28,7 @@ public class ValidAnagram {
         }
 
         for (var n : count) {
-            if (n != 0) return  false;
+            if (n != 0) return false;
         }
 
         return true;
