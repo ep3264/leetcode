@@ -1,5 +1,8 @@
 package com.leetcode.linkedlist;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListNode {
     int val;
     ListNode next;
@@ -23,6 +26,31 @@ public class ListNode {
             System.out.println(cur.val);
             cur = cur.next;
         }
+    }
+
+    public static ListNode toLinkedList(int[] arr) {
+        if (arr == null || arr.length == 0) return null;
+
+        ListNode dummy = new ListNode(0);
+        ListNode current = dummy;
+
+        for (int val : arr) {
+            current.next = new ListNode(val);
+            current = current.next;
+        }
+
+        return dummy.next;
+    }
+
+    public static List<Integer> toList(ListNode head) {
+        List<Integer> result = new ArrayList<>();
+
+        while (head != null) {
+            result.add(head.val);
+            head = head.next;
+        }
+
+        return result;
     }
 
     public static final ListNode HEAD = new ListNode(

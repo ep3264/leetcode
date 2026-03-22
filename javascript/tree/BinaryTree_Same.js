@@ -1,24 +1,4 @@
-import { TreeNode, printLevelOrder } from "./TreeNode.js";
-
-const root = new TreeNode(
-    1,
-    new TreeNode(
-        2
-    ),
-    new TreeNode(
-        3
-    )
-);
-
-const root2 = new TreeNode(
-    1,
-    new TreeNode(
-        3
-    ),
-    new TreeNode(
-        2
-    )
-);
+import { TreeNode, fromArray } from "./TreeNode.js";
 
 class Solution {
     /**
@@ -43,7 +23,14 @@ class Solution {
     }
 }
 
-printLevelOrder(root);
-printLevelOrder(root2);
 
-console.log(new Solution().isSameTree(root, root2));
+const root = new TreeNode(
+    1,
+    new TreeNode(
+        2
+    ),
+    new TreeNode(
+        3
+    )
+);
+console.log(new Solution().isSameTree(root, fromArray([1, 2, 3])));

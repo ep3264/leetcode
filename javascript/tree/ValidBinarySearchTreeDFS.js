@@ -1,23 +1,4 @@
-import { TreeNode, treeToArray } from "./TreeNode.js";
-
-const root = new TreeNode(
-    5,
-    new TreeNode(4),
-    new TreeNode(6,
-        new TreeNode(3),
-        new TreeNode(7)
-    )
-);
-
-const root2 = new TreeNode(
-    3,
-    new TreeNode(1,
-        null,
-        new TreeNode(2)
-
-    ),
-    new TreeNode(4)
-);
+import { fromArray, TreeNode } from "./TreeNode.js";
 
 class Solution {
     /**
@@ -36,14 +17,19 @@ class Solution {
     }
 }
 
-console.log(treeToArray(
-    root
-));
+const root = new TreeNode(
+    5,
+    new TreeNode(4),
+    new TreeNode(6,
+        new TreeNode(3),
+        new TreeNode(7)
+    )
+);
 
 console.log(
     new Solution().isValidBST(root)
 );
 
 console.log(
-    new Solution().isValidBST(root2)
+    new Solution().isValidBST(fromArray([3, 1, 4, null, 2]))
 );

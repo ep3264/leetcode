@@ -1,28 +1,4 @@
-import { TreeNode, printLevelOrder } from "./TreeNode.js";
-
-const root = new TreeNode(
-    1,
-    new TreeNode(
-        2,
-        new TreeNode(4),
-        new TreeNode(5)
-    ),
-    new TreeNode(
-        3,
-        new TreeNode(6),
-        new TreeNode(7)
-    )
-);
-
-const root2 = new TreeNode(
-    2,
-    new TreeNode(
-        4
-    ),
-    new TreeNode(
-        5
-    )
-);
+import { fromArray, TreeNode } from "./TreeNode.js";
 
 class Solution {
     /**
@@ -56,6 +32,11 @@ class Solution {
     }
 }
 
-printLevelOrder(root);
-printLevelOrder(root2);
-console.log(new Solution().isSubtree(root, root2));
+const root = fromArray([
+    1, 2, 3,
+    4, 5, 6, 7
+]);
+
+console.log(
+    new Solution().isSubtree(root, fromArray([2, 4, 5]))
+);

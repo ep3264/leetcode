@@ -1,32 +1,5 @@
 import { TreeNode } from "./TreeNode.js";
 
-const root = new TreeNode(
-    6,
-    new TreeNode(
-        2,
-        new TreeNode(0),
-        new TreeNode(4,
-            new TreeNode(3),
-            new TreeNode(5)
-        )
-    ),
-    new TreeNode(
-        8,
-        new TreeNode(7),
-        new TreeNode(9)
-    )
-);
-
-const root2 = new TreeNode(
-    3,
-    new TreeNode(1,
-        null,
-        new TreeNode(2)
-
-    ),
-    new TreeNode(4)
-);
-
 class Solution {
     /**
      * @param {TreeNode} root
@@ -62,5 +35,28 @@ class Solution {
     }
 }
 
-//console.log(new Solution().lowestCommonAncestor(root, new TreeNode(2), new TreeNode(4)).val);
-console.log(new Solution().lowestCommonAncestor(root2, new TreeNode(2), new TreeNode(4)));
+
+const root = new TreeNode(
+    6,
+    new TreeNode(
+        2,
+        new TreeNode(0),
+        new TreeNode(4,
+            new TreeNode(3),
+            new TreeNode(5)
+        )
+    ),
+    new TreeNode(
+        8,
+        new TreeNode(7),
+        new TreeNode(9)
+    )
+);
+
+console.log(new Solution().lowestCommonAncestor(root, new TreeNode(2), new TreeNode(4)).val);
+console.log(
+    new Solution()
+        .lowestCommonAncestor(
+            fromArray([3, 1, 4, null, 2]), new TreeNode(2), new TreeNode(4)
+        )
+);

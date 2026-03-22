@@ -8,7 +8,11 @@ import java.util.List;
 public class MeetingRooms {
 
     public static void main(String[] args) {
-        var result = new MeetingRooms().canAttendMeetings(new ArrayList<>(List.of(new Interval(0, 30), new Interval(15, 20), new Interval(5, 10))));
+        var result = new MeetingRooms().canAttendMeetings(
+                new ArrayList<>(
+                        List.of(new Interval(0, 30), new Interval(15, 20), new Interval(5, 10))
+                )
+        );
         System.out.println(result);
     }
 

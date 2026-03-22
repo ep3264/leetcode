@@ -1,21 +1,4 @@
-import { TreeNode, printLevelOrder } from "./TreeNode.js";
-
-const root = new TreeNode(
-    1,
-    new TreeNode(
-        2,
-        new TreeNode(4),
-        new TreeNode(5)
-    ),
-    new TreeNode(
-        3,
-        new TreeNode(6),
-        new TreeNode(7,
-            new TreeNode(8),
-            null
-        )
-    )
-);
+import { TreeNode } from "./TreeNode.js";
 
 class Solution {
     /**
@@ -25,14 +8,13 @@ class Solution {
     maxDepth(root) {
         if (!root) return 0;
 
-        const queue = [root];
-        let depth = 0;
         const nNodes = [];
+        let depth = 0;
+        const queue = [root];
 
         function inc(n) {
             nNodes[n] = (nNodes[n] ?? 0) + 1;
         }
-
         inc(depth);
 
         while (queue.length) {
@@ -57,7 +39,23 @@ class Solution {
     }
 }
 
-printLevelOrder(root);
+const root = new TreeNode(
+    1,
+    new TreeNode(
+        2,
+        new TreeNode(4),
+        new TreeNode(5)
+    ),
+    new TreeNode(
+        3,
+        new TreeNode(6),
+        new TreeNode(7,
+            new TreeNode(8),
+            null
+        )
+    )
+);
+
 console.log(
     new Solution().maxDepth(root)
 );
