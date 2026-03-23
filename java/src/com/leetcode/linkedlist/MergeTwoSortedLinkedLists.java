@@ -1,10 +1,11 @@
 package com.leetcode.linkedlist;
+import  static com.leetcode.linkedlist.ListNode.toLinkedList;
 
 public class MergeTwoSortedLinkedLists {
 
     public static void main(String[] args) {
         ListNode.printList(
-                new MergeTwoSortedLinkedLists().mergeTwoLists(ListNode.HEAD, HEAD)
+                new MergeTwoSortedLinkedLists().mergeTwoLists(ListNode.HEAD, toLinkedList(new Integer[]{0, 2, 6, 8}))
         );
     }
     
@@ -27,9 +28,4 @@ public class MergeTwoSortedLinkedLists {
         }
     }
 
-    public static final ListNode HEAD = new ListNode(
-            0,
-            new ListNode(2,
-                    new ListNode(6,
-                            new ListNode(8))));
 }

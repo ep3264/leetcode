@@ -1,6 +1,15 @@
 package com.leetcode.linkedlist;
 
 public class LinkedListCycleDetection {
+    public static final ListNode TAIL = new ListNode(3);
+    public static final ListNode HEAD = new ListNode(0,
+            new ListNode(1,
+                    new ListNode(2,
+                            TAIL)));
+
+    static {
+        TAIL.next = HEAD;
+    }
 
     public static void main(String[] args) {
         System.out.println(
@@ -23,15 +32,4 @@ public class LinkedListCycleDetection {
 
         return false;
     }
-
-    public static final ListNode TAIL = new ListNode(3);
-    public static final ListNode HEAD = new ListNode(0,
-            new ListNode(1,
-                    new ListNode(2,
-                            TAIL)));
-
-    static {
-        TAIL.next = HEAD;
-    }
-
 }

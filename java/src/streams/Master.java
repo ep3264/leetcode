@@ -47,7 +47,7 @@ public class Master {
                             }
                         }
                 ).collect(Collectors.toList())
-        );
+        ); // [2, 2, 4, 4]
 
         // Merge sorted list
         var a = List.of(1, 3, 5, 7, 9);
@@ -98,6 +98,7 @@ public class Master {
         System.out.println(
               letterCount
         );
+
         // Produce Map mapping department name to a sorted list of employee names
         record Employee(String name, String dept) {}
         var staff = List.of(
@@ -117,8 +118,6 @@ public class Master {
                 ))
         ));
 
-        System.out.println(
-                ret
-        );
+        System.out.println(ret);
     }
 }

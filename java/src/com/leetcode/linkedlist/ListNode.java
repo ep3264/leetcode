@@ -28,7 +28,7 @@ public class ListNode {
         }
     }
 
-    public static ListNode toLinkedList(int[] arr) {
+    public static ListNode toLinkedList(Integer[] arr) {
         if (arr == null || arr.length == 0) return null;
 
         ListNode dummy = new ListNode(0);
