@@ -13,5 +13,5 @@ class Solution {
 }
 
 const n = 16;
-const sol = new Solution;
-console.log(sol.countBits(n));
+
+console.log(new Solution().countBits(n));
