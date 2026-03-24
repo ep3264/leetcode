@@ -1,5 +1,13 @@
 package interview;
 
+/**
+ * Please create validation method for parentheses
+ *
+ * Valid - ()(()())((()))(())
+ * Invalid - ()(()))))(()()
+ *
+ * Show the usage of the method, output it.
+ */
 public class ParenthesesValidation {
     public static void main(String[] args) {
         String validInput = "()(()())((()))(())";
@@ -22,8 +30,9 @@ public class ParenthesesValidation {
                parenthesesCounter++;
             } else if (parenthesesCounter > 0 && s.charAt(i) == ')') {
                parenthesesCounter--;
-            } else
+            } else {
                 return false;
+            }
         }
 
         return parenthesesCounter == 0;

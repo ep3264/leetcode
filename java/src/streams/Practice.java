@@ -131,5 +131,14 @@ public class Practice {
         System.out.println(
                 nums4.stream().findFirst().orElse(0)
         );
+
+        // sort CASE_INSENSITIVE_ORDER
+        var list = List.of("banana", "Apple", "cherry");
+
+        List<String> sorted = list.stream()
+                .sorted(String.CASE_INSENSITIVE_ORDER)
+                .toList();
+
+        System.out.println(sorted);
     }
 }

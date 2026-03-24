@@ -15,9 +15,7 @@ public class Master {
                 Collectors.counting(),
                 (sum, count) -> (double) sum / count
         ));
-        System.out.println(
-                r
-        );
+        System.out.println(r);
 
         // Find the coldest and hottest city in a single stream pass using teeing().
         record Temp(String city, int celsius) {

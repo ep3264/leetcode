@@ -1,14 +1,13 @@
 package collections;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class TreeMapPractice {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         TreeMap<Integer, String> map = new TreeMap<>();
         map.put(5, "e");
         map.put(1, "a");
@@ -30,24 +29,19 @@ public class TreeMapPractice {
 
         // Word frequency in sorted order
         String[] words = {"apple", "banana", "apple", "cherry", "banana", "apple"};
-
         var m = Arrays.stream(words).collect(Collectors.toMap(
                 w -> w,
                 k -> 1,
                 Integer::sum,
                 TreeMap::new
         ));
-
-        System.out.println(
-                m
-        );
+        System.out.println(m);
 
         TreeMap<Integer, String> prices = new TreeMap<>();
         prices.put(10, "pen");
         prices.put(25, "notebook");
         prices.put(50, "backpack");
         prices.put(100, "headphones");
-
         int budget = 40;
         System.out.println(prices.floorEntry(budget).getValue());
 
@@ -57,7 +51,6 @@ public class TreeMapPractice {
         schedule.put(12, "lunch");
         schedule.put(17, "review");
         schedule.put(20, "dinner");
-
         schedule.subMap(9, true, 17, true)
                 .forEach((hour, event) ->
                         System.out.println(hour + ":00 - " + event));
@@ -70,7 +63,6 @@ public class TreeMapPractice {
         products.put(800, "monitor");
         products.put(50, "mouse");
         products.put(1200, "laptop");
-
 
         int n = 3, count = 0;
         for (Integer price : products.descendingKeySet()) {
@@ -95,18 +87,15 @@ public class TreeMapPractice {
         graded.forEach((score, g) ->
                 System.out.println(score + "=> " + g));
 
-
         TreeMap<Integer, String> tasks = new TreeMap<>();
         tasks.put(3, "send email");
         tasks.put(10, "fix prod bug");
         tasks.put(1, "update docs");
         tasks.put(7, "code review");
-
         while (!tasks.isEmpty()) {
 
             System.out.println(tasks.pollLastEntry());
         }
-
     }
 
 }
