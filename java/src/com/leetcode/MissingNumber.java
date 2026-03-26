@@ -5,7 +5,6 @@ public class MissingNumber {
         System.out.println(
                 new MissingNumber().missingNumber(new int[]{0, 2, 3, 4})
         );
-
     }
 
     public int missingNumber(int[] nums) {
