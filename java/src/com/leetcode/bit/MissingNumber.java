@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.bit;
 
 public class MissingNumber {
     public static void main(String[] args) {

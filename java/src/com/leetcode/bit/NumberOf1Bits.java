@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.bit;
 
 public class NumberOf1Bits {
     public int hammingWeight(int n) {
