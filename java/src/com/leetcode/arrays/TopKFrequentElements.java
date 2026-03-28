@@ -19,22 +19,28 @@ public class TopKFrequentElements {
         var freq = new HashMap<Integer, Integer>();
 
         for (int i = 0; i < nums.length; i++) {
-                freq.merge(nums[i], 1, Integer::sum);
-         }
+            freq.merge(nums[i], 1, Integer::sum);
+        }
 
-
-        var queue = new PriorityQueue<Map.Entry<Integer,Integer>>(Comparator.comparingInt(Map.Entry::getValue));
+        List<Integer>[] keyByFreq = new List[nums.length + 1];
         for (var entry : freq.entrySet()) {
-            if (queue.size() < k) {
-                queue.offer(entry);
-            } else {
-                if (entry.getValue() > queue.peek().getValue()) {
-                    queue.poll();
-                    queue.offer(entry);
-                }
+            if (keyByFreq[entry.getValue()] == null)
+                keyByFreq[entry.getValue()] = new ArrayList<>();
+
+            keyByFreq[entry.getValue()].add(entry.getKey());
+        }
+
+        var result = new int[k];
+        int j = 0;
+        for (int i = keyByFreq.length - 1; i >= 0; i--) {
+            var keys = keyByFreq[i];
+            if (keys == null) continue;
+            for (int key : keys) {
+                result[j++] = key;
+                if (j >= k) return result;
             }
         }
 
-        return queue.stream().mapToInt(e -> e.getKey().intValue()).toArray();
+        return result;
     }
 }
