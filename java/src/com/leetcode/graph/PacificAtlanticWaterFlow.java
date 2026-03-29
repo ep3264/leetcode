@@ -1,7 +1,5 @@
 package com.leetcode.graph;
 
-import java.awt.*;
-import java.nio.channels.Pipe;
 import java.util.*;
 import java.util.List;
 import java.util.function.BiPredicate;
@@ -24,13 +22,12 @@ public class PacificAtlanticWaterFlow {
                 })
         );
 
-
         System.out.println(
                 new PacificAtlanticWaterFlow().pacificAtlantic(new int[][]{{1}, {1}})
         );
     }
 
-    record Point(int x, int y) {}
+    private record Point(int x, int y) {}
     private Set<Point> pacific = new HashSet<>();
     private Set<Point> atlantic = new HashSet<>();
 
@@ -39,11 +36,9 @@ public class PacificAtlanticWaterFlow {
 
         var result = new ArrayList<List<Integer>>();
 
-        pacific  = new HashSet<Point>();
-
         for (int i = 0; i < heights.length; i++) {
             int m = heights[i].length;
-            for (int j = 0; j < m; j++) {
+            for (int j = m - 1; j >= 0; j--) {
                 if (test(i, j, heights)) {
                     result.add(new ArrayList<>(List.of(i, j)));
                 }
@@ -60,11 +55,10 @@ public class PacificAtlanticWaterFlow {
 
     private boolean canFlow(int i, int j, int[][] heights, BiPredicate<Integer, Integer> p, Set<Point> visited,
                             Set<Point> reachable) {
-        if (reachable.contains(new Point(i, j))) return true;
-
         if (p.test(i, j)) {
             return true;
         }
+        if (reachable.contains(new Point(i, j))) return true;
 
         if (visited.contains(new Point(i, j)))
             return false;
@@ -86,5 +80,4 @@ public class PacificAtlanticWaterFlow {
 
         return ret;
     }
-
 }
