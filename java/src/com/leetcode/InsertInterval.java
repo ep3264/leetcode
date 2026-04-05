@@ -19,7 +19,7 @@ public class InsertInterval {
 
         var res2 = new InsertInterval().insert(
                 new int[][]{{1, 5}, {6, 8}},
-                new int[]{0, 9}
+                new int[]{7, 9}
         );
 
         for (var arr : res2) {
@@ -42,7 +42,7 @@ public class InsertInterval {
                 result.add(cur);
                 break;
             }
-            if (cur[0] < newInterval[0] && cur[1] >= newInterval[0] || newInterval[0] <= cur[0]) {
+            if (newInterval[0] <= cur[1]) {
                 int start = cur[0];
                 if (newInterval[0] <= cur[0]) start = newInterval[0];
                 int end = cur[1];
