@@ -5,33 +5,34 @@ class Solution {
      * @return {boolean}
      */
     canFinish(numCourses, prerequisites) {
-        let b = true;
-
+        const completed = new Set();
         for (let i = 0; i < prerequisites.length; i++) {
-            b = b && this.dfs(prerequisites[i][1], new Set(), prerequisites);
+            if (!this.dfs(prerequisites[i][1], new Set(), completed, prerequisites)) return false;
         }
 
-        return b;
+        return true;
     }
 
-    dfs(i, visited, prerequisites) {
+    dfs(i, visited, completed, prerequisites) {
+        if (completed.has(i)) return true;
         if (visited.has(i)) return false;
         visited.add(i);
-        let b = true;
         for (let j = 0; j < prerequisites.length; j++) {
-            if (prerequisites[j][0] == i) {
-                b = b && this.dfs(prerequisites[j][1], visited, prerequisites);
+            if (prerequisites[j][0] === i) {
+                if (!this.dfs(prerequisites[j][1], visited, completed, prerequisites)) return false;
             }
         }
 
-        return b;
+        completed.add(i);
+
+        return true;
     }
 }
 /*
 
 console.log(
     new Solution().canFinish(
-        2, [[2, 0], [1, 0], [3, 1], [3, 2], [1, 3]]
+        4, [[2, 0], [1, 0], [3, 1], [3, 2], [1, 3]]
 
     )
 );
@@ -39,7 +40,7 @@ console.log(
 */
 console.log(
     new Solution().canFinish(
-        2, [[1, 4], [2, 4], [3, 1], [3, 2]]
+        5, [[1, 4], [2, 4], [3, 1], [3, 2]]
 
     )
 );
