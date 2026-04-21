@@ -29,10 +29,8 @@ public class LinkedListCycleDetection {
             if (fast == slow) {
                 return true;
             }
-
         }
-
-
+        
         return false;
     }
 }
