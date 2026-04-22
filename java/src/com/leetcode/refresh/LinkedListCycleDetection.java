@@ -30,7 +30,7 @@ public class LinkedListCycleDetection {
                 return true;
             }
         }
-        
+
         return false;
     }
 }
