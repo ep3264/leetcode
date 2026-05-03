@@ -9,11 +9,9 @@ public class BestTimeToBuyAndSellStock {
        var max = 0;
        var min = prices[0];
        for (int i = 1; i < prices.length; i++) {
-
             max = Math.max(prices[i] - min, max);
             min = Math.min(min, prices[i]);
         }
-
 
         return max;
     }
