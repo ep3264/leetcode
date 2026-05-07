@@ -10,6 +10,7 @@ public class ValidParentheses {
     }
 
     public boolean isValid(String s) {
+        if (s.length() % 2 != 0) return false;
         var st = new int[s.length() + 1];
         int pointer = 0;
 
