@@ -21,37 +21,27 @@ public class ReorderLinkedList {
     }
 
     public void reorderList(ListNode head) {
-        if (head == null || head.next == null)
+        if (head == null)
             return;
 
         reorderListRec(head, head.next);
     }
 
     public ListNode reorderListRec(ListNode head, ListNode cur) {
-        if (cur.next == null) {
-            cur.next = head.next;
-            head.next = cur;
-            return cur.next;
-        }
+        if (cur == null) return head;
 
         var ret = reorderListRec(head, cur.next);
         if (ret == null) return null;
-        var temp = ret.next;
+        var next = ret.next;
 
-        if (cur == ret) {
+        if (ret == cur || ret.next == cur) {
             cur.next = null;
             return  null;
         }
 
-        if (cur.next == temp) {
-            temp.next = null;
-            return null;
-        }
         ret.next = cur;
-        cur.next = temp;
+        cur.next = next;
 
-
-
-        return temp;
+        return next;
     }
 }
